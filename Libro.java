@@ -56,4 +56,12 @@ public class Libro {
         System.out.println(titulo);
     }
     
+    public void imprimeDetalles() {
+        System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas);
+    }
+    
+    public String getDetalles() {
+        String detalles = "Titulo: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas;
+        return detalles;
+    }
 }
