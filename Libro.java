@@ -115,16 +115,16 @@ public class Libro {
     public String getDetalles() {
        String detalles = "Titulo: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de veces prestado: " + vecesPrestado; 
        if (!"".equals(numeroReferencia)) {
-           System.out.println("Numero de referencia: " + numeroReferencia);
-        }
+           detalles = detalles + "Numero de referencia: " + numeroReferencia;
+       }
        else {
-           System.out.println("Numero de referencia: ZZZ");
-        }
+           detalles = detalles + "Numero de referencia: ZZZ";
+       }
        if (esLibroDeTexto) {
-           System.out.println("Se está usando como libro de texto");
-        }
+           detalles = detalles + "Se está usando como libro de texto";
+       }
        else {
-           System.out.println("No se está usando como libro de texto");
+           detalles = detalles + "No se está usando como libro de texto";
        }
        return detalles;
     }  
