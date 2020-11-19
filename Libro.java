@@ -15,17 +15,19 @@ public class Libro {
     private int numeroPaginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int paginas)
+    public Libro(String autorLibro, String tituloLibro, int paginas, boolean esLibroDeTexto)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
         vecesPrestado = 0;
+        esLibroDeTexto = true;
     }
     
     /**
@@ -82,9 +84,16 @@ public class Libro {
         vecesPrestado++;
     }
     
-     /**
-     * Imprime los datos del autor
+    /**
+     * Añado boolean para saber si es libro de texto o no
      */
+    public boolean esLibroDeTexto () {
+        return esLibroDeTexto;
+    }
+    
+     /**
+      * Imprime los datos del autor
+      */
     public void imprimeAutor() {
         System.out.println(autor);
     }
@@ -105,12 +114,18 @@ public class Libro {
     
     public String getDetalles() {
        String detalles = "Titulo: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de veces prestado: " + vecesPrestado; 
-        if (!"".equals(numeroReferencia)) {
+       if (!"".equals(numeroReferencia)) {
            System.out.println("Numero de referencia: " + numeroReferencia);
         }
        else {
            System.out.println("Numero de referencia: ZZZ");
         }
+       if (!esLibroDeTexto) {
+           System.out.println("Se está usando como libro de texto");
+        }
+       else {
+           System.out.println("No se está usando como libro de texto");
+       }
         return detalles;
     }  
 }
