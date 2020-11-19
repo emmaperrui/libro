@@ -20,14 +20,14 @@ public class Libro {
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int paginas, boolean esLibroDeTexto)
+    public Libro(String autorLibro, String tituloLibro, int paginas, boolean libroTexto)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
         vecesPrestado = 0;
-        esLibroDeTexto = true;
+        esLibroDeTexto = libroTexto;
     }
     
     /**
@@ -120,12 +120,12 @@ public class Libro {
        else {
            System.out.println("Numero de referencia: ZZZ");
         }
-       if (!esLibroDeTexto) {
+       if (esLibroDeTexto) {
            System.out.println("Se está usando como libro de texto");
         }
        else {
            System.out.println("No se está usando como libro de texto");
        }
-        return detalles;
+       return detalles;
     }  
 }
